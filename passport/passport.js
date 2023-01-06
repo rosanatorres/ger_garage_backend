@@ -1,3 +1,7 @@
+/*a callback is an asynchronous equivalent for a function that is called after a given task is completed. 
+Alternatively, it can be defined as a function that is passed into another function so 
+that the latter can call it at the completion of a given task. 
+It allows other programs to keep running, thereby preventing blocking */
 const passport = require("passport"),
     LocalStrategy = require("passport-local").Strategy,
     User = require("../models/registered_users");
@@ -61,3 +65,4 @@ passport.use(
         }
     )
 );
+/*payloads / cargas uteis: the metadata of the payloads are to be attached on the HTTP header. */

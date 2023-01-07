@@ -1,5 +1,7 @@
+/*Load Mongoose module */
 const mongoose = require("mongoose");
 
+/*Create database schema as an instance of Mongoose schema */
 const bookingSchema = new mongoose.Schema({
   licenseNumber: String,
   initialCost: String,
@@ -49,3 +51,9 @@ bookingSchema.set("toJSON", {
 });
 
 module.exports = mongoose.model("Booking", bookingSchema);
+
+/*Mongoose is an Object Document Mapper (ODM) that translates MongoDB documents into program objects, 
+thereby making data access and manipulation in MongoDB easier. Mongoose also employs a principle called 
+Object Relational Mapping (ORM or O/RM). This principle is based on having strict models or schemas. 
+You have to define your schema structure, unlike in the case of MongoDB, which doesn't need any fixed schema. 
+You can insert or update as per your requirements.*/

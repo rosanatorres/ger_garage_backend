@@ -1,5 +1,9 @@
+
+//Load the Express module using the following code: 
 const express = require("express");
+//Intialize the router using the following code:
 var router = express.Router();
+
 const transporter = require("../email/email");
 const Booking = require("../models/bookings");
 const User = require("../models/registered_users");
@@ -14,7 +18,7 @@ const requestLogger = (request, response, next) => {
 };
 
 router.use(requestLogger);
-
+//Route to the about page booking
 router.get("/", (request, response) => {
     Booking.find({}).then((booking) => {
         response.json(booking);
@@ -164,5 +168,5 @@ router.delete("/:id", (request, response, next) => {
         })
         .catch((error) => next(error));
 });
-
+//Export the router using the following code:
 module.exports = router;
